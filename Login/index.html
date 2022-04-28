@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- <h2 class="login__success">Đăng nhập thành công</h2> -->
+      <button class="btn" onclick="login()">Đăng nhập hệ thống</button>
+
+      <div class="form-1">
+        <form action="" method="post" name="form__login">
+          <header>Login Form</header>
+          <div class="field username">
+            <div class="input-area">
+              <input type="text" placeholder="Username" />
+              <i class="icon fas fa-user"></i>
+              <i class="error error-icon fas fa-exclamation-circle"></i>
+            </div>
+            <div class="error error-txt">Email can't be blank</div>
+          </div>
+          <div class="field password">
+            <div class="input-area">
+              <input type="password" placeholder="Password" />
+              <i class="icon fas fa-lock"></i>
+              <i class="error error-icon fas fa-exclamation-circle"></i>
+            </div>
+            <div class="error error-txt">Password can't be blank</div>
+          </div>
+          <input type="submit" value="Login" />
+          <p class="Text__Change__Pass--Success" style="color: green;">Thay đổi mật khẩu thành công</p>
+        </form>
+        <p class="forgot-pass">
+          <button class="" onclick="changePass()" >Forgot Password?</button>
+        </p>
+      </div>
+
+      <div class="form-2">
+        <form name="form__forgot_password" action="" method="post">
+          <header>Reset Password</header>
+          <div class="form-outline mb-4 oddPass field">
+            <input
+              type="text"
+              id="oddPass"
+              class="form-control"
+              placeholder="OddPassword"
+            />
+            <div class="error error-txt">OddPass can't be blank</div>
+          </div>
+  
+          <!-- Password input -->
+          <div class="form-outline mb-4 newPass field">
+            <input
+              type="text"
+              id="newPass"
+              class="form-control"
+              placeholder="NewPassWord"
+            />
+            <div class="error error-txt">NewPass can't be blank</div>
+          </div>
+          <input type="submit" value=" Reset" />
+          <!-- <button type="button" class="btn btn-success btn-block mb-4">
+            Reset
+          </button> -->
+        </form>
+        <p class="forgot-pass">
+          <button id="btn-login-page-pass "class="btn" onclick="login()" style="background-color: #fff ;font-size: 16px; height: auto;">Đăng nhập hệ thống</button>
+        </p>
+      </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
