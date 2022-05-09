@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import { Routes, Route, Link } from "react-router-dom";
+import Products from "./Products";
 const useStyles = makeStyles((theme) => ({
   itemCate: {
     height: "50px",
@@ -18,13 +19,18 @@ const useStyles = makeStyles((theme) => ({
       color: "white",
     },
   },
+  buttonItemCate: {
+    textDecoration: "none",
+    "&:hover": {
+      color: "white",
+    },
+  },
 }));
 
 function NavCategories(props) {
   const classes = useStyles();
-  const { category } = props;
-  const [nameCate, setNameCate] = useState("");
-  const [indexCate, setIndexCate] = useState("");
+  const { category, onChangeCategory } = props;
+  // const [checkStatus, setCheckStatus] = useState(false);
   const renderCategory = (props) => {
     if (category) {
       return category.map((item, index) => {
@@ -33,9 +39,9 @@ function NavCategories(props) {
             <Link
               to={"/category/" + index}
               onClick={() => {
-                props.setNameCate(item);
-                props.setIndexCate(index);
+                onChangeCategory(item);
               }}
+              className={classes.buttonItemCate}
             >
               {item}
             </Link>
